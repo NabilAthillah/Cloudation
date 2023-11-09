@@ -2,26 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url(/public//assets/fonts/static/Montserrat-Regular.ttf);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-color: white;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#NavbarHome {
+        background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+}
+
+#NavbarHome > div:first-child {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.68);
+    border-radius: 25px;
+    padding-inline: 24px;
+    padding-block: 12px;
+}
+
+#NavbarList {
+    transition: .2s ease-in-out;
+}
+
+#NavbarList:hover {
+    color: #1988db !important;
+}
+
+/* width */
+::-webkit-scrollbar { 
+    width: 10px; 
+} 
+  
+/* Track */
+::-webkit-scrollbar-track { 
+    background: #f1f1f1; 
+} 
+  
+/* Handle */
+::-webkit-scrollbar-thumb { 
+    background: #1988db; 
+    border-radius: 5px; 
+} 
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover { 
+    background: #1988db; 
+}
+
+#BgFirstHero {
+    border-radius: 0% 100% 49% 51% / 0% 47% 53% 100% ;
+    background-color: #1988db;
+    width: 800px;
+    height: 500px;
+    z-index: 0;
+}
+
+#FormFirstHero {
+    box-shadow: 0 10px 1rem 0 rgba(0, 0, 0, .2); 
+    background-color: white;
+    border: 2px solid #1988db;
+}
+
+#FormInput {
+    box-shadow: 0px 5px 8px 0 rgba(0, 0, 0, .2);
+}
+
+input#FormInput:focus {
+    color: #1988db;
+    outline-color: #1988db;
+}
+
+#DropDownHome {
+    box-shadow: 2px 4px 10px 0px rgba(0,0,0,0.45);
+    -webkit-box-shadow: 2px 4px 10px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 2px 4px 10px 0px rgba(0,0,0,0.45);
+}
+
+.font-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+.disabled-button {
+    background-color: lightgray;
+    color: white;
+    cursor: not-allowed;
+  }
+
+  
