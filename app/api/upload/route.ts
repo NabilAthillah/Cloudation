@@ -5,6 +5,12 @@ export async function POST(req: Request) {
   const formData = await req.formData();
   const formDataEntryValues = Array.from(formData.values());
 
+  const directory = 'public/Uploads';
+
+  if (!fs.existsSync(directory)) {
+    fs.mkdirSync(directory, { recursive: true });
+  }
+
   for (const formDataEntryValue of formDataEntryValues) {
     if (
       typeof formDataEntryValue === "object" &&
