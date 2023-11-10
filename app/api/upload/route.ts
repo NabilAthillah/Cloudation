@@ -8,7 +8,12 @@ export async function POST(req: Request) {
   const directory = 'public/Uploads';
 
   if (!fs.existsSync(directory)) {
-    fs.mkdirSync(directory, { recursive: true });
+    try {
+      fs.mkdirSync(directory, { recursive: true });
+      console.log("Directory created successfully");
+    } catch (err) {
+      console.error("Error creating directory:", err);
+    }
   }
 
   for (const formDataEntryValue of formDataEntryValues) {
